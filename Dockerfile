@@ -28,5 +28,5 @@ COPY /  /app/
 
 EXPOSE 3468
 WORKDIR /app
-CMD ["bash"]
-#CMD [ "python", "/app/scan.py server" ]
+#CMD ["bash"]
+CMD [ "python", "scan.py server --loglevel=INFO" ]
