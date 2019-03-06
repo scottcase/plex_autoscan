@@ -29,4 +29,5 @@ COPY /  /app/
 EXPOSE 3468
 
 ###CMD ["bash"]
+WORKDIR /app
 CMD [ "python", "/app/scan.py server" ]
