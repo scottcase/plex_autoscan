@@ -112,8 +112,8 @@ def scan(config, lock, path, scan_for, section, scan_type, resleep_paths):
         headers = {
             'Content-Type': 'application/json',
         }
-        
-        # logger.info(data)
+        data = '{"Cmd": ["bash","-c"," + str(final_cmd) + "]}'
+        logger.info(data)
         # utils.run_command(final_cmd.encode("utf-8"))
         logger.info("Finished scan!")
 
