@@ -37,7 +37,8 @@ def updateSectionMappings(conf):
            logger.exception("Issue encountered when attemping to dynamically update section mappings")
 def scan(config, lock, path, scan_for, section, scan_type, resleep_paths):
     scan_path = ""
-
+    scan_path = os.path.dirname(path).strip()
+    
     # sleep for delay
     while True:
         if config['SERVER_SCAN_DELAY']:
