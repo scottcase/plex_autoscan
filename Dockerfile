@@ -27,3 +27,5 @@ RUN \
 EXPOSE 3468
 
 VOLUME /config
+
+CMD [“bash”]
