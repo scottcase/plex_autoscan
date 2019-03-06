@@ -1,3 +1,0 @@
-#!/usr/bin/python
-echo "Starting Plex Media Server Auto Scanner."
-exec /app/scan.py server --loglevel=INFO
