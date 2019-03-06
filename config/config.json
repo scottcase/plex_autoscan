@@ -30,38 +30,38 @@
   "PLEX_SCANNER": "/usr/lib/plexmediaserver/Plex\\ Media\\ Scanner",
   "PLEX_SECTION_PATH_MAPPINGS": {
     "28": [
-      "/mnt/HomeMovies/"
+      "/mnt/user/Movies/HomeMovies"
     ], 
     "31": [
-      "/mnt/Movies/Music/"
+      "/mnt/user/Movies/Music/"
     ], 
     "39": [
-      "/mnt/Movies/Concerts/"
+      "/mnt/user/Movies/Concerts/"
     ], 
     "40": [
-      "/mnt/Movies/Sonya/", 
-      "/mnt/Movies/SonyaAnime/"
+      "/mnt/user/Movies/Sonya/", 
+      "/mnt/user/Movies/SonyaAnime/"
     ], 
     "41": [
-      "/mnt/Movies/SonyaMovies/"
+      "/mnt/user/Movies/SonyaMovies/"
     ], 
     "42": [
-      "/mnt/Movies/4k.UHD/"
+      "/mnt/user/Movies/4k.UHD/"
     ], 
     "44": [
-      "/mnt/TVShows/TVDocumentary/", 
-      "/mnt/TVShows/Samantha/", 
-      "/mnt/TVShows/Ryan/", 
-      "/mnt/TVShows/KidsTV/", 
-      "/mnt/TVShows/FamilyTVShows/", 
-      "/mnt/TVShows/TVShows/"
+      "/mnt/user/TVShows/TVDocumentary/", 
+      "/mnt/user/TVShows/Samantha/", 
+      "/mnt/user/TVShows/Ryan/", 
+      "/mnt/user/TVShows/KidsTV/", 
+      "/mnt/user/TVShows/FamilyTVShows/", 
+      "/mnt/user/TVShows/TVShows/"
     ], 
     "45": [
-      "/mnt/Movies/Adult/", 
-      "/mnt/Movies/FamilyMovies/", 
-      "/mnt/Movies/HolidayMovies/", 
-      "/mnt/Movies/Kids/", 
-      "/mnt/Movies/Documentary/"
+      "/mnt/user/Movies/Adult/", 
+      "/mnt/user/Movies/FamilyMovies/", 
+      "/mnt/user/Movies/HolidayMovies/", 
+      "/mnt/user/Movies/Kids/", 
+      "/mnt/user/Movies/Documentary/"
     ]
   },
   "PLEX_SUPPORT_DIR": "/var/lib/plexmediaserver/Library/Application\\ Support",
