@@ -29,4 +29,6 @@ COPY /  /app/
 EXPOSE 3468
 WORKDIR /app
 #CMD ["bash"]
-CMD [ "python", "scan.py server --loglevel=INFO" ]
+#ENTRYPOINT ["/script.sh"]
+#CMD [ "python", "scan.py server --loglevel=INFO" ]
+CMD python scan.py $ENV1
