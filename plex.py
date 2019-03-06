@@ -107,7 +107,7 @@ def scan(config, lock, path, scan_for, section, scan_type, resleep_paths):
         # begin scan
         logger.info("Starting Plex Scanner")
         logger.info(final_cmd)
-        utils.run_command(final_cmd.encode("utf-8"))
+        # utils.run_command(final_cmd.encode("utf-8"))
         logger.info("Finished scan!")
 
         # remove item from database if sqlite is enabled
