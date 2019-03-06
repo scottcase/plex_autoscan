@@ -55,54 +55,6 @@ def scan(config, lock, path, scan_for, section, scan_type, resleep_paths):
         else:
             break
 
-    # check file exists
-    checks = 0
-    check_path = utils.map_pushed_path_file_exists(config, path)
-    scan_path_is_directory = os.path.isdir(check_path)
-
-    while True:
-        checks += 1
-        if os.path.exists(check_path):
-            logger.info("File '%s' exists on check %d of %d.", check_path, checks, config['SERVER_MAX_FILE_CHECKS'])
-            if not scan_path or not len(scan_path):
-                scan_path = os.path.dirname(path).strip() if not scan_path_is_directory else path.strip()
-            break
-        elif not scan_path_is_directory and config['SERVER_SCAN_FOLDER_ON_FILE_EXISTS_EXHAUSTION'] and \
-                config['SERVER_MAX_FILE_CHECKS'] - checks == 1:
-            # penultimate check but SERVER_SCAN_FOLDER_ON_FILE_EXISTS_EXHAUSTION was turned on
-            # lets make scan path the folder instead for the final check
-            logger.warning(
-                "File '%s' reached the penultimate file check, changing scan path to '%s', final check commences "
-                "in %s seconds", check_path, os.path.dirname(path), config['SERVER_FILE_CHECK_DELAY'])
-            check_path = os.path.dirname(check_path).strip()
-            scan_path = os.path.dirname(path).strip()
-            scan_path_is_directory = os.path.isdir(check_path)
-            time.sleep(config['SERVER_FILE_CHECK_DELAY'])
-            # send rclone cache clear if enabled
-            if config['RCLONE_RC_CACHE_EXPIRE']['ENABLED']:
-                utils.rclone_rc_clear_cache(config, check_path)
-
-        elif checks >= config['SERVER_MAX_FILE_CHECKS']:
-            logger.warning("File '%s' exhausted all available checks, aborting scan request.", check_path)
-            # remove item from database if sqlite is enabled
-            if config['SERVER_USE_SQLITE']:
-                if db.remove_item(path):
-                    logger.info("Removed '%s' from database", path)
-                    time.sleep(1)
-                else:
-                    logger.error("Failed removing '%s' from database", path)
-            return
-
-        else:
-            logger.info("File '%s' did not exist on check %d of %d, checking again in %s seconds.", check_path,
-                        checks,
-                        config['SERVER_MAX_FILE_CHECKS'],
-                        config['SERVER_FILE_CHECK_DELAY'])
-            time.sleep(config['SERVER_FILE_CHECK_DELAY'])
-            # send rclone cache clear if enabled
-            if config['RCLONE_RC_CACHE_EXPIRE']['ENABLED']:
-                utils.rclone_rc_clear_cache(config, check_path)
-
     # build plex scanner command
     if os.name == 'nt':
         final_cmd = '"%s" --scan --refresh --section %s --directory "%s"' \
@@ -154,7 +106,7 @@ def scan(config, lock, path, scan_for, section, scan_type, resleep_paths):
 
         # begin scan
         logger.info("Starting Plex Scanner")
-        logger.debug(final_cmd)
+        logger.info(final_cmd)
         utils.run_command(final_cmd.encode("utf-8"))
         logger.info("Finished scan!")
 
