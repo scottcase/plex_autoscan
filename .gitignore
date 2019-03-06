@@ -21,7 +21,6 @@ __pycache__/
 
 # configs
 *.cfg
-*.json
 
 # generators
 *.bat
