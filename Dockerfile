@@ -29,4 +29,4 @@ COPY /  /app/
 
 EXPOSE 3468
 
-CMD ["bash"]
+##### CMD ["bash"]
