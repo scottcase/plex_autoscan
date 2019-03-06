@@ -112,8 +112,7 @@ def scan(config, lock, path, scan_for, section, scan_type, resleep_paths):
         headers = {
             'Content-Type': 'application/json',
         }
-        data = '{"Cmd": ["bash","-c","/usr/lib/plexmediaserver/Plex\\ Media\\ Scanner --scan --refresh --section ' + str(section) + ' --directory ' + cmd_quote(
-            scan_path) +"]}'
+        data = '{"Cmd": ["bash","-c","/usr/lib/plexmediaserver/Plex\\ Media\\ Scanner --scan --refresh --section ' + str(section) + ' --directory ' + cmd_quote(scan_path) +"]}'
         logger.info(data)
         # utils.run_command(final_cmd.encode("utf-8"))
         logger.info("Finished scan!")
