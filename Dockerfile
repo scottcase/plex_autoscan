@@ -24,7 +24,6 @@ RUN \
        /tmp/* \
        /var/tmp/*
 # add local files
-COPY root/ /       
 COPY /  /app/
 
 EXPOSE 3468
