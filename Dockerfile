@@ -24,7 +24,7 @@ RUN \
        /tmp/* \
        /var/tmp/*
        
-COPY /  /opt/plex_autoscan/
+COPY /  /app/
 
 EXPOSE 3468
 
