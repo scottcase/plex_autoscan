@@ -115,6 +115,9 @@ def scan(config, lock, path, scan_for, section, scan_type, resleep_paths):
         # final_cmd = 'sudo -u %s bash -c %s' % (config['PLEX_USER'], cmd_quote(cmd))
         data = '{"Cmd": ["bash","-c","%s"]}' % (final_cmd)
         logger.info(data)
+        response = requests.post('http:/v1.39/containers/Plex/exec', headers=headers, data=data)
+        myJson = response.json()
+        print (myJson['id'])
         # utils.run_command(final_cmd.encode("utf-8"))
         logger.info("Finished scan!")
 
