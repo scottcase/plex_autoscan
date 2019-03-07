@@ -4,7 +4,7 @@ import sqlite3
 import time
 from contextlib import closing
 import docker
-docker_client = docker.APIClient(base_url='unix://var/run/docker.sock')
+client = docker.APIClient(base_url='unix://var/run/docker.sock',version='auto')
 
 import db
 
@@ -111,13 +111,13 @@ def scan(config, lock, path, scan_for, section, scan_type, resleep_paths):
         # begin scan
         logger.info("Starting Plex Scanner")
         logger.info(final_cmd)
-        myheaders = {
-            'Content-Type': 'application/json',
-        }
+        
         # final_cmd = 'sudo -u %s bash -c %s' % (config['PLEX_USER'], cmd_quote(cmd))
         mydata = '{"Cmd": ["bash","-c","%s"]}' % (final_cmd)
         logger.info(mydata)
-        docker_client.version()
+        dkrVer = client.version()
+        logger.info("right below shound show something about docker version")
+        logger.info(dkrVer)
         # utils.run_command(final_cmd.encode("utf-8"))
         logger.info("Finished scan!")
 
