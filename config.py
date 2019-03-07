@@ -78,7 +78,7 @@ class Config(object):
         'config': {
             'argv': '--config',
             'env': 'PLEX_AUTOSCAN_CONFIG',
-            'default': os.path.join(os.path.dirname(sys.argv[0]), 'config2', 'config.json')
+            'default': os.path.join(os.path.dirname(sys.argv[0]), 'config', 'config.json')
         },
         'logfile': {
             'argv': '--logfile',
@@ -230,7 +230,7 @@ class Config(object):
     def load(self):
         if not os.path.exists(self.settings['config']):
             logger.warn("No config file found, creating default config.")
-            # self.save(self.default_config)
+            self.save(self.default_config)
 
         cfg = {}
         with open(self.settings['config'], 'r') as fp:
