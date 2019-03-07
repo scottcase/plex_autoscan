@@ -25,7 +25,7 @@ RUN \
        /var/tmp/*
 # add local files
 COPY /  /app/
-COPY /config.json /config/config.json
+
 EXPOSE 3468
 WORKDIR /app
 VOLUME /config
