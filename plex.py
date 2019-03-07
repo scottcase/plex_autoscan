@@ -113,9 +113,9 @@ def scan(config, lock, path, scan_for, section, scan_type, resleep_paths):
         logger.info(final_cmd)
         
         # final_cmd = 'sudo -u %s bash -c %s' % (config['PLEX_USER'], cmd_quote(cmd))
-        mydata = ' "%s" ' % (final_cmd)
+        mydata = '-i Plex bash -c "%s" ' % (final_cmd)
         logger.info(mydata)
-        dkrVer = client.version()
+        dkrVer = client.exec_run(mydata, user=abc)
         logger.info("right below shound show something about docker version")
         logger.info(dkrVer)
         # utils.run_command(final_cmd.encode("utf-8"))
