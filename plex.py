@@ -119,8 +119,15 @@ def scan(config, lock, path, scan_for, section, scan_type, resleep_paths):
         dkrCreate = client.exec_create('Plex',mydata, user='abc')
         logger.info("right below shound show something about docker version")
         logger.info(dkrCreate)
-        resp_dict = json.loads(dkrCreate)
-        dkrCreateID = resp_dict['id']
+        //dumps the json object into an element
+        json_str = json.dumps(dkrCreate)
+        //load the json to a string
+        resp = json.loads(json_str)
+        //print the resp
+        print (resp)
+        //extract an element in the response
+        print (resp['Id'])
+        dkrCreateID = resp_dict['Id']
         logger.info(dkrCreateID)
         # utils.run_command(final_cmd.encode("utf-8"))
         logger.info("Finished scan!")
