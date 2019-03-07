@@ -4,7 +4,7 @@ LABEL maintainer="Scott <scott.case.1@gmail.com>"
 ENV DEBIAN_FRONTEND=noninteractive
 
 RUN apt-get update && \
-    apt-get install -y python python-pip git
+    apt-get install -y python python-pip tzdata
     
 ################################
 ### Config:
