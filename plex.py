@@ -110,7 +110,7 @@ def scan(config, lock, path, scan_for, section, scan_type, resleep_paths):
         logger.info("Starting Plex Scanner")
         logger.info(final_cmd)
         data = 'curl --unix-socket /var/run/docker.sock -H "Content-Type: application/json" -d {"Cmd": ["bash","-c","%s"]}' % (final_cmd)
-        data += '-X POST http:/v1.39/containers/Plex/exec'
+        data += ' -X POST http:/v1.39/containers/Plex/exec'
         logger.info(data)
         #result = os.popen('curl --unix-socket /var/run/docker.sock -H "Content-Type: application/json" -d ').read()
         #print result
