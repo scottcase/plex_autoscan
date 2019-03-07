@@ -109,11 +109,15 @@ def scan(config, lock, path, scan_for, section, scan_type, resleep_paths):
         # begin scan
         logger.info("Starting Plex Scanner")
         logger.info(final_cmd)
-        data = 'curl --unix-socket /var/run/docker.sock -H "Content-Type: application/json" -d {"Cmd": ["bash","-c","%s"]}' % (final_cmd)
-        data += ' -X POST http:/v1.39/containers/Plex/exec'
-        logger.info(data)
-        #result = os.popen('curl --unix-socket /var/run/docker.sock -H "Content-Type: application/json" -d ').read()
-        #print result
+        myheaders = {
+            'Content-Type': 'application/json',
+        }
+        # final_cmd = 'sudo -u %s bash -c %s' % (config['PLEX_USER'], cmd_quote(cmd))
+        mydata = '{"Cmd": ["bash","-c","%s"]}' % (final_cmd)
+        logger.info(mydata)
+        response = requests.post('http:/v1.39/containers/Plex/exec', headers=myheaders, data=mydata)
+        myJson = response.json()
+        print (myJson['id'])
         # utils.run_command(final_cmd.encode("utf-8"))
         logger.info("Finished scan!")
 
