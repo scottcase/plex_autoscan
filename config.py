@@ -230,7 +230,7 @@ class Config(object):
     def load(self):
         if not os.path.exists(self.settings['config']):
             logger.warn("No config file found, creating default config.")
-            self.save(self.default_config)
+            # self.save(self.default_config)
 
         cfg = {}
         with open(self.settings['config'], 'r') as fp:
