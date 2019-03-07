@@ -67,7 +67,7 @@
   "PLEX_SUPPORT_DIR": "/var/lib/plexmediaserver/Library/Application\\ Support",
   "PLEX_TOKEN": "reTyUHNZVwUeV6ckCUsc",
   "PLEX_USER": "plex",
-  "PLEX_WAIT_FOR_EXTERNAL_SCANNERS": true,
+  "PLEX_WAIT_FOR_EXTERNAL_SCANNERS": false,
   "RCLONE_RC_CACHE_EXPIRE": {
     "ENABLED": false,
     "MOUNT_FOLDER": "/mnt/rclone",

@@ -24,6 +24,7 @@ RUN \
        /tmp/* \
        /var/tmp/*
 # add local files
+COPY /config.json /config/config.json
 COPY /  /app/
 
 EXPOSE 3468
