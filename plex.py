@@ -110,7 +110,7 @@ def scan(config, lock, path, scan_for, section, scan_type, resleep_paths):
 
         # begin scan
         logger.info("Starting Plex Scanner")
-        logger.info(final_cmd)
+        # logger.info(final_cmd)
         
         # final_cmd = 'sudo -u %s bash -c %s' % (config['PLEX_USER'], cmd_quote(cmd))
         mydata = 'bash -c "%s" ' % (final_cmd)
