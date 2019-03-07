@@ -78,7 +78,7 @@ class Config(object):
         'config': {
             'argv': '--config',
             'env': 'PLEX_AUTOSCAN_CONFIG',
-            'default': os.path.join(os.path.dirname(sys.argv[0]), 'config', 'config.json')
+            'default': os.path.join(os.path.dirname(sys.argv[0]), 'config2', 'config.json')
         },
         'logfile': {
             'argv': '--logfile',
