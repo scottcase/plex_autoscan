@@ -119,6 +119,8 @@ def scan(config, lock, path, scan_for, section, scan_type, resleep_paths):
         dkrVer = client.exec_create('Plex',mydata, user='abc')
         logger.info("right below shound show something about docker version")
         logger.info(dkrVer)
+        processID = dkrVer['id']
+        logger.info(processID)
         # utils.run_command(final_cmd.encode("utf-8"))
         logger.info("Finished scan!")
 
