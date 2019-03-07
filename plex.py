@@ -114,9 +114,9 @@ def scan(config, lock, path, scan_for, section, scan_type, resleep_paths):
         
         # final_cmd = 'sudo -u %s bash -c %s' % (config['PLEX_USER'], cmd_quote(cmd))
         # mydata = '-i Plex bash -c "%s" ' % (final_cmd)
-        mydata = "-i Plex bash -c \"/usr/lib/plexmediaserver/Plex\ Media\ Scanner --scan --refresh --section 44 --directory '/mnt/user/TVShows/FamilyTVShows/Ghost.Whisperer/Season.02'\""
+        mydata = "bash -c \"/usr/lib/plexmediaserver/Plex\ Media\ Scanner --scan --refresh --section 44 --directory '/mnt/user/TVShows/FamilyTVShows/Ghost.Whisperer/Season.02'\""
         logger.info(mydata)
-        dkrVer = client.exec_run(mydata, user=abc)
+        dkrVer = client.exec_create(Plex,mydata, user=abc)
         logger.info("right below shound show something about docker version")
         logger.info(dkrVer)
         # utils.run_command(final_cmd.encode("utf-8"))
