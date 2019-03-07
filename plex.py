@@ -114,23 +114,18 @@ def scan(config, lock, path, scan_for, section, scan_type, resleep_paths):
         
         # final_cmd = 'sudo -u %s bash -c %s' % (config['PLEX_USER'], cmd_quote(cmd))
         mydata = 'bash -c "%s" ' % (final_cmd)
-        # mydata = "bash -c \"/usr/lib/plexmediaserver/Plex\ Media\ Scanner --scan --refresh --section 44 --directory '/mnt/user/TVShows/FamilyTVShows/Ghost.Whisperer/Season.02'\""
-        logger.info(mydata)
+        logger.error(mydata)
         dkrCreate = client.exec_create('Plex',mydata, user='abc')
-        logger.info("right below shound show something about docker version")
-        logger.info(dkrCreate)
+        logger.error("right below shound show something about docker version")
+        logger.error(dkrCreate)
         # dumps the json object into an element
         json_str = json.dumps(dkrCreate)
         # load the json to a string
         resp = json.loads(json_str)
-        # print the resp
-        # print (resp)
-        # extract an element in the response
-        # print (resp['Id'])
         dkrCreateID = resp['Id']
-        logger.info(dkrCreateID)
+        logger.error(dkrCreateID)
         dkrRun = client.exec_start(dkrCreateID,stream=True)
-        logger.info(dkrRun)
+        logger.error(dkrRun)
         # utils.run_command(final_cmd.encode("utf-8"))
         logger.info("Finished scan!")
 
