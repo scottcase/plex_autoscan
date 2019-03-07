@@ -124,11 +124,13 @@ def scan(config, lock, path, scan_for, section, scan_type, resleep_paths):
         # load the json to a string
         resp = json.loads(json_str)
         # print the resp
-        print (resp)
+        # print (resp)
         # extract an element in the response
-        print (resp['Id'])
+        # print (resp['Id'])
         dkrCreateID = resp['Id']
         logger.info(dkrCreateID)
+        dkrRun = client.exec_start(dkrCreateID,socket=True)
+        logger.info(dkrRun)
         # utils.run_command(final_cmd.encode("utf-8"))
         logger.info("Finished scan!")
 
