@@ -113,8 +113,8 @@ def scan(config, lock, path, scan_for, section, scan_type, resleep_paths):
         logger.info(final_cmd)
         
         # final_cmd = 'sudo -u %s bash -c %s' % (config['PLEX_USER'], cmd_quote(cmd))
-        # mydata = '-i Plex bash -c "%s" ' % (final_cmd)
-        mydata = "bash -c \"/usr/lib/plexmediaserver/Plex\ Media\ Scanner --scan --refresh --section 44 --directory '/mnt/user/TVShows/FamilyTVShows/Ghost.Whisperer/Season.02'\""
+        mydata = 'bash -c "%s" ' % (final_cmd)
+        # mydata = "bash -c \"/usr/lib/plexmediaserver/Plex\ Media\ Scanner --scan --refresh --section 44 --directory '/mnt/user/TVShows/FamilyTVShows/Ghost.Whisperer/Season.02'\""
         logger.info(mydata)
         dkrCreate = client.exec_create('Plex',mydata, user='abc')
         logger.info("right below shound show something about docker version")
@@ -129,7 +129,7 @@ def scan(config, lock, path, scan_for, section, scan_type, resleep_paths):
         # print (resp['Id'])
         dkrCreateID = resp['Id']
         logger.info(dkrCreateID)
-        dkrRun = client.exec_start(dkrCreateID,socket=True)
+        dkrRun = client.exec_start(dkrCreateID,stream=True)
         logger.info(dkrRun)
         # utils.run_command(final_cmd.encode("utf-8"))
         logger.info("Finished scan!")
