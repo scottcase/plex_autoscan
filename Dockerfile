@@ -24,9 +24,8 @@ RUN \
        /tmp/* \
        /var/tmp/*
 # add local files
-COPY /config.json /config/config.json
 COPY /  /app/
-
+COPY /app/config.json /config/config.json
 EXPOSE 3468
 WORKDIR /app
 #CMD ["bash"]
