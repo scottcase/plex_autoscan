@@ -3,6 +3,8 @@ import os
 import sqlite3
 import time
 from contextlib import closing
+import docker
+docker_client = docker.APIClient(base_url='unix://var/run/docker.sock')
 
 import db
 
@@ -115,9 +117,7 @@ def scan(config, lock, path, scan_for, section, scan_type, resleep_paths):
         # final_cmd = 'sudo -u %s bash -c %s' % (config['PLEX_USER'], cmd_quote(cmd))
         mydata = '{"Cmd": ["bash","-c","%s"]}' % (final_cmd)
         logger.info(mydata)
-        response = requests.post('http:/v1.39/containers/Plex/exec', headers=myheaders, data=mydata)
-        myJson = response.json()
-        print (myJson['id'])
+        docker_client.version()
         # utils.run_command(final_cmd.encode("utf-8"))
         logger.info("Finished scan!")
 
