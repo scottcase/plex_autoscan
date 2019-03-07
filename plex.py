@@ -116,7 +116,7 @@ def scan(config, lock, path, scan_for, section, scan_type, resleep_paths):
         # mydata = '-i Plex bash -c "%s" ' % (final_cmd)
         mydata = "bash -c \"/usr/lib/plexmediaserver/Plex\ Media\ Scanner --scan --refresh --section 44 --directory '/mnt/user/TVShows/FamilyTVShows/Ghost.Whisperer/Season.02'\""
         logger.info(mydata)
-        dkrVer = client.exec_create(Plex,mydata, user=abc)
+        dkrVer = client.exec_create('Plex',mydata, user=abc)
         logger.info("right below shound show something about docker version")
         logger.info(dkrVer)
         # utils.run_command(final_cmd.encode("utf-8"))
