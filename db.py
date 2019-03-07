@@ -102,7 +102,8 @@ def remove_item(scan_path):
 def add_item(scan_path, scan_for, scan_section, scan_type):
     item = None
     try:
-        return QueueItemModel.create(scan_path=scan_path, scan_for=scan_for, scan_section=scan_section,
+        scan_path_do = os.path.dirname(scan_path).strip()
+        return QueueItemModel.create(scan_path=scan_path_do, scan_for=scan_for, scan_section=scan_section,
                                      scan_type=scan_type)
     except AttributeError as ex:
         return item
