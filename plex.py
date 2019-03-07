@@ -113,7 +113,7 @@ def scan(config, lock, path, scan_for, section, scan_type, resleep_paths):
         logger.info(final_cmd)
         
         # final_cmd = 'sudo -u %s bash -c %s' % (config['PLEX_USER'], cmd_quote(cmd))
-        mydata = '{"Cmd": ["bash","-c","%s"]}' % (final_cmd)
+        mydata = ' "%s" ' % (final_cmd)
         logger.info(mydata)
         dkrVer = client.version()
         logger.info("right below shound show something about docker version")
