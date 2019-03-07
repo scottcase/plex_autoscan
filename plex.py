@@ -127,7 +127,7 @@ def scan(config, lock, path, scan_for, section, scan_type, resleep_paths):
         print (resp)
         # extract an element in the response
         print (resp['Id'])
-        dkrCreateID = resp_dict['Id']
+        dkrCreateID = resp['Id']
         logger.info(dkrCreateID)
         # utils.run_command(final_cmd.encode("utf-8"))
         logger.info("Finished scan!")
