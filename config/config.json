@@ -65,7 +65,7 @@
   },
   "PLEX_SUPPORT_DIR": "/config/Library/Application\\ Support",
   "PLEX_TOKEN": "reTyUHNZVwUeV6ckCUsc",
-  "PLEX_USER": "plex",
+  "PLEX_USER": "abc",
   "PLEX_WAIT_FOR_EXTERNAL_SCANNERS": false,
   "RCLONE_RC_CACHE_EXPIRE": {
     "ENABLED": false,
@@ -132,6 +132,6 @@
     ]
   },
   "SERVER_USE_SQLITE": true,
-  "USE_DOCKER": true,
+  "USE_DOCKER": false,
   "USE_SUDO": false
 }
