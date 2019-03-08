@@ -16,8 +16,8 @@
       "flac","ts"
     ]
   },
-  "PLEX_ANALYZE_DIRECTORY": false,
-  "PLEX_ANALYZE_TYPE": "off",
+  "PLEX_ANALYZE_DIRECTORY": true,
+  "PLEX_ANALYZE_TYPE": "basic",
   "PLEX_DATABASE_PATH": "/var/lib/plexmediaserver/Library/Application Support/Plex Media Server/Plug-in Support/Databases/com.plexapp.plugins.library.db",
   "PLEX_EMPTY_TRASH": false,
   "PLEX_EMPTY_TRASH_CONTROL_FILES": [
@@ -39,8 +39,7 @@
       "/mnt/user/Movies/Concerts/"
     ], 
     "40": [
-      "/mnt/user/Movies/Sonya/", 
-      "/mnt/user/Movies/SonyaAnime/"
+      "/mnt/user/SonyaMedia/"
     ], 
     "41": [
       "/mnt/user/Movies/SonyaMovies/"
@@ -112,10 +111,13 @@
     ],
     "/mnt/user/Movies": [
       "/movies"
+    ],
+    "/mnt/user/TVShows": [
+      "/library"
     ]
   },
   "SERVER_PORT": 3468,
-  "SERVER_SCAN_DELAY": 10,
+  "SERVER_SCAN_DELAY": 180,
   "SERVER_FILE_CHECK_DELAY": 60,
   "SERVER_SCAN_FOLDER_ON_FILE_EXISTS_EXHAUSTION": false,
   "SERVER_SCAN_PRIORITIES": {
