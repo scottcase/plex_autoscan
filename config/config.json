@@ -110,10 +110,11 @@
       "/samanthastv"
     ],
     "/mnt/user/Movies": [
-      "/movies"
+      "/movies",
+      "/library/Movies"
     ],
     "/mnt/user/TVShows": [
-      "/library"
+      "/library/TVShows"
     ]
   },
   "SERVER_PORT": 3468,
