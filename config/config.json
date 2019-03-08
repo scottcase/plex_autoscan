@@ -18,7 +18,7 @@
   },
   "PLEX_ANALYZE_DIRECTORY": true,
   "PLEX_ANALYZE_TYPE": "basic",
-  "PLEX_DATABASE_PATH": "/var/lib/plexmediaserver/Library/Application Support/Plex Media Server/Plug-in Support/Databases/com.plexapp.plugins.library.db",
+  "PLEX_DATABASE_PATH": "/config/Library/Application Support/Plex Media Server/Plug-in Support/Databases/com.plexapp.plugins.library.db",
   "PLEX_EMPTY_TRASH": false,
   "PLEX_EMPTY_TRASH_CONTROL_FILES": [
     ""
@@ -63,7 +63,7 @@
       "/mnt/user/Movies/Documentary/"
     ]
   },
-  "PLEX_SUPPORT_DIR": "/var/lib/plexmediaserver/Library/Application\\ Support",
+  "PLEX_SUPPORT_DIR": "/config/Library/Application\\ Support",
   "PLEX_TOKEN": "reTyUHNZVwUeV6ckCUsc",
   "PLEX_USER": "plex",
   "PLEX_WAIT_FOR_EXTERNAL_SCANNERS": false,
@@ -132,6 +132,6 @@
     ]
   },
   "SERVER_USE_SQLITE": true,
-  "USE_DOCKER": false,
+  "USE_DOCKER": true,
   "USE_SUDO": false
 }
