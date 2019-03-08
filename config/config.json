@@ -27,7 +27,7 @@
   "PLEX_EMPTY_TRASH_ZERO_DELETED": false,
   "PLEX_LD_LIBRARY_PATH": "/usr/lib/plexmediaserver",
   "PLEX_LOCAL_URL": "http://10.0.0.25:32400",
-  "PLEX_SCANNER": "/usr/lib/plexmediaserver/Plex\\\\ Media\\\\ Scanner",
+  "PLEX_SCANNER": "/usr/lib/plexmediaserver/Plex\\ Media\\ Scanner",
   "PLEX_SECTION_PATH_MAPPINGS": {
     "28": [
       "/mnt/user/Movies/HomeMovies"
