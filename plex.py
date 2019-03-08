@@ -3,8 +3,8 @@ import os
 import sqlite3
 import time
 from contextlib import closing
-import docker
-client = docker.APIClient(base_url='unix://var/run/docker.sock',version='auto')
+# import docker
+# client = docker.APIClient(base_url='unix://var/run/docker.sock',version='auto')
 import json
 import db
 
@@ -115,16 +115,16 @@ def scan(config, lock, path, scan_for, section, scan_type, resleep_paths):
         # final_cmd = 'sudo -u %s bash -c %s' % (config['PLEX_USER'], cmd_quote(cmd))
         mydata = 'bash -c "%s" ' % (final_cmd)
         logger.debug(mydata)
-        dkrCreate = client.exec_create('Plex',mydata, user='abc')
+        # dkrCreate = client.exec_create('Plex',mydata, user='abc')
         # logger.error("right below shound show something about docker version")
         # logger.error(dkrCreate)
         # dumps the json object into an element
-        json_str = json.dumps(dkrCreate)
+        # json_str = json.dumps(dkrCreate)
         # load the json to a string
-        resp = json.loads(json_str)
-        dkrCreateID = resp['Id']
+        # resp = json.loads(json_str)
+        # dkrCreateID = resp['Id']
         # logger.error(dkrCreateID)
-        dkrRun = client.exec_start(dkrCreateID,stream=True)
+        # dkrRun = client.exec_start(dkrCreateID,stream=True)
         # logger.error(dkrRun)
         # utils.run_command(final_cmd.encode("utf-8"))
         logger.info("Finished scan!")
