@@ -83,7 +83,7 @@ class Config(object):
         'logfile': {
             'argv': '--logfile',
             'env': 'PLEX_AUTOSCAN_LOGFILE',
-            'default': os.path.join(os.path.dirname(sys.argv[0]), 'plex_autoscan.log')
+            'default': os.path.join(os.path.dirname(sys.argv[0]), 'config', 'plex_autoscan.log')
         },
         'loglevel': {
             'argv': '--loglevel',
@@ -93,7 +93,7 @@ class Config(object):
         'queuefile': {
             'argv': '--queuefile',
             'env': 'PLEX_AUTOSCAN_QUEUEFILE',
-            'default': os.path.join(os.path.dirname(sys.argv[0]), 'queue.db')
+            'default': os.path.join(os.path.dirname(sys.argv[0]), 'config', 'queue.db')
         },
         'tokenfile': {
             'argv': '--tokenfile',
