@@ -30,7 +30,7 @@
   "PLEX_SCANNER": "/usr/lib/plexmediaserver/Plex\\ Media\\ Scanner",
   "PLEX_SECTION_PATH_MAPPINGS": {
     "28": [
-      "/mnt/user/Movies/HomeMovies"
+      "/mnt/user/HomeMovies/"
     ], 
     "31": [
       "/mnt/user/Movies/Music/"
@@ -48,11 +48,11 @@
       "/mnt/user/Movies/4k.UHD/"
     ], 
     "44": [
-      "/mnt/user/TVShows/TVDocumentary/", 
-      "/mnt/user/TVShows/Samantha/", 
       "/mnt/user/TVShows/Ryan/", 
-      "/mnt/user/TVShows/KidsTV/", 
+      "/mnt/user/TVShows/Samantha/", 
       "/mnt/user/TVShows/FamilyTVShows/", 
+      "/mnt/user/TVShows/TVDocumentary/", 
+      "/mnt/user/TVShows/KidsTV/", 
       "/mnt/user/TVShows/TVShows/"
     ], 
     "45": [
@@ -115,6 +115,9 @@
     ],
     "/mnt/user/TVShows": [
       "/library/TVShows"
+    ],
+    "/mnt/user/SonyaMedia": [
+      "/sonyaanime"
     ]
   },
   "SERVER_PORT": 3468,
