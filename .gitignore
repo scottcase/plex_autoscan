@@ -22,6 +22,7 @@ __pycache__/
 # configs
 *.cfg
 *.DS_Store
+*.json
 
 # generators
 *.bat
