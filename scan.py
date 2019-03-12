@@ -513,7 +513,7 @@ def client_pushed():
                    "Upgrade" if ('isUpgrade' in data and data['isUpgrade']) else data['eventType'])
 
     else:
-        logger.error("Unknown scan request from: %r", request.remote_addr)
+        logger.error("Unknown scan request from: %r. datatype: %r artist: %r trackfile: %r", request.remote_addr,data['eventType'],data['artist'],data['trackFile'])
         abort(400)
 
     return "OK"
