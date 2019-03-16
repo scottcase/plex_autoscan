@@ -511,6 +511,15 @@ def client_pushed():
         final_path = utils.map_pushed_path(conf.configs, path)
         start_scan(final_path, 'Lidarr',
                    "Upgrade" if ('isUpgrade' in data and data['isUpgrade']) else data['eventType'])
+                   
+    elif 'movie' in data and 'eventType' in data and data['eventType'] == 'Rename' and 'folderPath' in data['movie']:
+        # lidarr Rename webhook
+        logger.info("Client %r scan request for movie: '%s', event: '%s'", request.remote_addr,
+                    data['artist']['path'],
+                    "Upgrade" if ('isUpgrade' in data and data['isUpgrade']) else data['eventType'])
+        final_path = utils.map_pushed_path(conf.configs, data['artist']['path'])
+        start_scan(final_path, 'Lidarr',
+                   "Upgrade" if ('isUpgrade' in data and data['isUpgrade']) else data['eventType'])
 
     else:
         logger.error("Unknown scan request from: %r", request.remote_addr)
