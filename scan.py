@@ -512,7 +512,7 @@ def client_pushed():
         start_scan(final_path, 'Lidarr',
                    "Upgrade" if ('isUpgrade' in data and data['isUpgrade']) else data['eventType'])
                    
-    elif 'movie' in data and 'eventType' in data and data['eventType'] == 'Rename' and 'folderPath' in data['movie']:
+    elif 'artist' in data and 'eventType' in data and data['eventType'] == 'Rename' and 'path' in data['artist']:
         # lidarr Rename webhook
         logger.info("Client %r scan request for movie: '%s', event: '%s'", request.remote_addr,
                     data['artist']['path'],
