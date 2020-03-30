@@ -466,6 +466,12 @@ def client_pushed():
         logger.info("Client %r made a manual scan request for: '%s'", request.remote_addr, data['filepath'])
         final_path = utils.map_pushed_path(conf.configs, data['filepath'])
         start_scan(final_path, 'UnManic', 'Encoded')
+        
+    elif 'eventType' in data and data['eventType'] == 'Tdarr':
+        # Tdarr Webhook
+        logger.info("Tdarr Client %r made a manual scan request for: '%s'", request.remote_addr, data['filepath'])
+        final_path = utils.map_pushed_path(conf.configs, data['filepath'])
+        start_scan(final_path, 'UnManic', 'Encoded')
 
     elif 'series' in data and 'eventType' in data and data['eventType'] == 'Rename' and 'path' in data['series']:
         # sonarr Rename webhook
