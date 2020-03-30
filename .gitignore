@@ -32,3 +32,6 @@ __pycache__/
 
 # Venv
 venv/
+/.settings/
+/.buildpath
+/.project
